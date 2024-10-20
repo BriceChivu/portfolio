@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pyperclip
 
-# Usage: python3 print_img_src.py --country=Taoyuan
+# Usage: python3 print_img_src.py
 from PIL import Image
 
 

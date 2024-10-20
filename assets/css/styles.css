@@ -1,0 +1,33 @@
+img {
+  width: auto;
+  height: 300px;
+}
+
+.custom-size-map {
+  width: auto; 
+  height: 500px;
+}
+
+/* body {
+  font-size: 1.5vw;
+} */
+
+/* video {
+  width: auto;
+  height: 300px;
+}
+
+iframe {
+  width: auto;
+  height: 300px;
+} */
+
+/* .dates {
+  font-size: 1.2vw;
+  font-style: italic;
+  color: rgb(112, 112, 112);
+} */
+
+/* h1 {
+  color: rgb(255, 0, 102);
+} */

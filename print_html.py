@@ -20,28 +20,29 @@ def get_untracked_files():
 
 
 def print_img_src():
-    path = Path("assets/photos").resolve()
-    if not path.exists():
-        print(f"path:{path} is wrong")
-        return
-
     # Get the set of untracked files
     untracked_files = get_untracked_files()
 
     html_output = ""
+    path = Path("assets/photos").resolve()
     for filepath in sorted(
         path.glob("*"), key=lambda x: "_".join(str(x).split("_")[2:])
     ):
-        name = str(filepath).split("Photo/")[1]
-
+        img_path = str(filepath).split("Photo/")[1]
         # Check if the file is an image and is untracked by Git
         if (
-            any(ext in str(filepath).lower() for ext in ["jpg", "jpeg", "png"])
-            and name in untracked_files
+            any(
+                ext in str(filepath).lower()
+                for ext in ["jpg", "jpeg", "png", "tiff", "heic"]
+            )
+            # and img_path in untracked_files
         ):
+            img_name = img_path.split("/")[-1].split(".")[-2]
+            for low_filepath in Path("assets/photos/low").resolve().glob("*"):
+                if img_name in str(low_filepath):
+                    low_img_path = str(low_filepath).split("Photo/")[1]
             img = Image.open(filepath)
-            # html_line = f'<img src="{name}" width="{img.width}" height="{img.height}" class="thumbnail" onclick="toggleScale(this)"/>'
-            html_line = f'<img src="assets/camera-icon.png" data-fullres="{name}" width="{img.width}" height="{img.height}" class="thumbnail" onclick="toggleScale(this)"/>'
+            html_line = f'<img src="{low_img_path}" data-fullres="{img_path}" width="{img.width}" height="{img.height}" class="thumbnail" onclick="toggleScale(this)"/>'
 
             html_output += html_line + "\n"
 

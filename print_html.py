@@ -20,7 +20,7 @@ def get_untracked_files():
 
 
 def print_img_src():
-    path = Path("assets/photos/low").resolve()
+    path = Path("assets/photos").resolve()
     if not path.exists():
         print(f"path:{path} is wrong")
         return
@@ -40,7 +40,9 @@ def print_img_src():
             and name in untracked_files
         ):
             img = Image.open(filepath)
-            html_line = f'<img src="{name}" width="{img.width}" height="{img.height}" loading="lazy" class="thumbnail" onclick="toggleScale(this)"/>'
+            # html_line = f'<img src="{name}" width="{img.width}" height="{img.height}" class="thumbnail" onclick="toggleScale(this)"/>'
+            html_line = f'<img src="assets/camera-icon.png" data-fullres="{name}" width="{img.width}" height="{img.height}" class="thumbnail" onclick="toggleScale(this)"/>'
+
             html_output += html_line + "\n"
 
     print(html_output)

@@ -35,17 +35,8 @@ def print_img_src():
             )
             and img_path in untracked_files
         ):
-            img_name = filepath.stem
-            low_img_path = next(
-                (
-                    str(p).split("Photo/")[1]
-                    for p in Path("assets/photos/low").resolve().glob("*")
-                    if img_name in str(p)
-                ),
-                "",
-            )
             img = Image.open(filepath)
-            html_output += f'<img src="{low_img_path}" data-fullres="{img_path}" width="{img.width}" height="{img.height}" class="thumbnail" onclick="toggleScale(this)"/>\n'
+            html_output += f'<img src="{img_path}" width="{img.width}" height="{img.height}" class="thumbnail" onclick="toggleScale(this)"/>\n'
 
     print(html_output)
     pyperclip.copy(html_output)

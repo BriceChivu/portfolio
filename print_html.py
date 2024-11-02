@@ -27,7 +27,7 @@ def print_img_src():
     for filepath in sorted(
         path.glob("*"), key=lambda x: "_".join(str(x).split("_")[2:])
     ):
-        img_path = str(filepath).split("Photo/")[1]
+        img_path = str(filepath).split("portfolio/")[1]
         if (
             any(
                 ext in filepath.suffix.lower()

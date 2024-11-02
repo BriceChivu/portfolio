@@ -12,12 +12,26 @@ body {
   border: 10px solid white; 
 }
 
-.thumbnail.scaled {
+.thumbnail.vertical {
   position: fixed;
   left: 50%;
   top: 50%;
-  height: 90vh;
+  height: 85vh;
   width: auto;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  border: 100vw solid white;
+  z-index: 1000;
+  background-color: white;
+}
+
+.thumbnail.horizontal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 85vw;
+  height: auto;
+  object-fit: contain;
   transform: translate(-50%, -50%);
   border: 100vh solid white;
   z-index: 1000;

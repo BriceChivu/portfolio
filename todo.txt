@@ -1,0 +1,4 @@
+- continue reading https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/?utm_source=lighthouse&utm_medium=devtools
+    - https://web.dev/articles/serve-responsive-images
+    - https://ausi.github.io/respimagelint/
+    - https://web.dev/articles/image-cdns

@@ -9,15 +9,17 @@
   cursor: pointer;
   transition-property: all;
   transition-timing-function: ease;
-  border: 10px solid white; 
+  /* border: 10px solid white;  */
 }
 
 .thumbnail.scaled {
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 85vh;
-  height: 85vh;
+  max-width: 95vw; /* Adjust to ensure it fits the viewport width */
+  max-height: 95vh; /* Adjust to ensure it fits the viewport height */
+  width: auto;
+  height: auto;
   object-fit: contain;
   transform: translate(-50%, -50%);
   border: 100vw solid white;

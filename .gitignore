@@ -1,6 +1,7 @@
 *.DS_Store
 *.prettierrc
 .venv/
+todo.txt
 # *.jpg
 # *.mp4
 # *.png
